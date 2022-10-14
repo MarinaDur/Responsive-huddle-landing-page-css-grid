@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --Violet: hsl(257, 40%, 49%);
+  --Soft-Magenta: hsl(300, 69%, 71%);
+  --font-body: "Open Sans", sans-serif;
+  --font-headings: "Poppins", sans-serif;
+  --btn-shadow: hsl(257, 39%, 38%);
+}
+
+/******
+Global
+******/
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 30px;
+  background: var(--Violet) url(./images/bg-mobile.svg) no-repeat left top;
+  background-size: contain;
+  background-position: 0 top;
+  font-family: var(--font-body);
+  display: grid;
+  place-content: center;
+  height: 100%;
+  row-gap: 60px;
+}
+
+/******
+Logo
+******/
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  color: white;
+}
+
+.name h1 {
+  color: white;
+  margin-left: 5px;
+  font-family: var(--font-headings);
+  font-size: clamp(1.3rem, 3vw, 2rem);
+}
+
+/******
+Center
+******/
+
+.center {
+  max-width: 80vw;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  grid-template-rows: auto auto;
+  row-gap: 3rem;
+}
+
+/******
+IMAGE
+******/
+
+.main-img {
+  width: 100%;
+}
+
+/******
+info
+******/
+
+.info {
+  color: white;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  row-gap: 20px;
+}
+
+h2 {
+  line-height: 1.5;
+  font-size: clamp(1.2rem, 3.2vw, 2.3rem);
+  letter-spacing: 1px;
+
+  justify-self: center;
+  font-weight: 600;
+}
+
+.info p {
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: clamp(0.8rem, 2.3vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.715);
+}
+
+button {
+  border-radius: 30px;
+  padding: 13px 15px;
+  width: 210px;
+  justify-self: center;
+  color: var(--Violet);
+  box-shadow: 0 4px 9px var(--btn-shadow);
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+/******
+icons
+******/
+
+.icons {
+  color: white;
+  font-size: 1.3rem;
+  justify-self: center;
+}
+
+.fa-brands {
+  border: 1px solid white;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+/******
+Responsive
+******/
+@media screen and (min-width: 720px) {
+  body {
+    background: var(--Violet) url(./images/bg-desktop.svg) no-repeat left top;
+    row-gap: 50px;
+  }
+
+  .center {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0;
+    align-items: center;
+    column-gap: 30px;
+  }
+
+  .info {
+    text-align: left;
+  }
+
+  h2 {
+    justify-self: left;
+  }
+  .header {
+    padding-right: 50px;
+  }
+
+  button {
+    justify-self: left;
+    width: 160px;
+  }
+
+  .icons {
+    justify-self: right;
+  }
+}
+
+/******
+Active
+******/
+button:hover {
+  background-color: var(--Soft-Magenta);
+  color: white;
+}
+
+.fa-brands:hover {
+  color: var(--Soft-Magenta);
+  border: 1px solid var(--Soft-Magenta);
+}
